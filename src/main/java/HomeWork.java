@@ -31,4 +31,31 @@ public class HomeWork {
             return element;
         }
 
+    // Найти длину последнего слова в строке. В строке только буквы и пробелы.
+    // "Hello world" - 5
+    // "    fly me    to the moon    " - 4
+    public static Integer lengthOfLastWord(String string) {
+        String[] words = string.split("\s");
+        return words[words.length - 1].length();
+    }
+
+    // Определить, что строка является палиндромом
+    // Сложность по памяти O(1), не создавать новые String, StringBuilder
+    // Примеры:
+    // abc - false
+    // 112233 - false
+    // aba - true
+    // 112211 - true
+    public static boolean isPalindrome(String string) {
+        int left = 0;
+        int right = string.length() - 1;
+        while (left < right) {
+            if (string.charAt(left) != string.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
     }
